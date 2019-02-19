@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 /**
@@ -28,7 +29,9 @@ public class DriverFactory {
 			System.setProperty(Driver.FIREFOX, Driver.FIREFOX_PATH);
 			driver = new FirefoxDriver();
 			
-		}else if(driverName.equals("IE")){
+		}else if(driverName.equals(DriverNames.IE)) {
+			System.setProperty(Driver.IE, Driver.IE_PATH);
+			driver = new InternetExplorerDriver();
 			// TODO 
 		}else if(driverName.equals(DriverNames.PHANTOM)){
 			// TODO 
