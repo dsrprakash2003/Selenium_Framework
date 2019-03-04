@@ -51,25 +51,21 @@ public class ELTC_026 {
 	}
 	
 	@Test
-	public void validLoginTest() throws Throwable {
+	public void CreateClass() throws Throwable {
 		ELTC_026_Admin.sendUserName("admin");
 		ELTC_026_Admin.sendPassword("admin@1234");
 		ELTC_026_Admin.clickLoginBtn(); 
 		ELTC_026_Admin.clickadmintab();
-		String title;
-		Assert.assertEquals(title = "Administration", title);
-		//screenShot.captureScreenShot("First");
 		ELTC_026_Admin.classesLink();
 		ELTC_026_Admin.addClasses();
 		ELTC_026_Admin.addClassName("demo");
 		ELTC_026_Admin.addClassdesc("demo");
 		ELTC_026_Admin.clickGrpPermissionDropDown();
 		ELTC_026_Admin.grpPermission();
+		Thread.sleep(3000);
 		ELTC_026_Admin.clickaddBtn();
-		WebElement msg=driver.findElement(By.xpath("//div[contains(@class,'alert alert-success')]"));
-		String text=msg.getText();
-		String expectedText = "Item added";
-		Assert.assertEquals(text,expectedText);
-				
-	}		
+		Thread.sleep(3000);
+		ELTC_026_Admin.assertCheck();
+		
+}
 }

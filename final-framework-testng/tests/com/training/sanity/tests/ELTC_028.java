@@ -62,24 +62,12 @@ public class ELTC_028 {
 		ELTC_026_Admin.sendPassword("admin@1234");
 		ELTC_026_Admin.clickLoginBtn(); 
 		ELTC_026_Admin.clickadmintab();
-		String title;
-		Assert.assertEquals(title = "Administration", title);
-		//screenShot.captureScreenShot("First");
 		ELTC_026_Admin.classesLink();
-		WebElement actmsg=driver.findElement(By.xpath("//table//tbody//tr//td[@title='demo']//following-sibling::td[2]"));
-		String  actmsgval = actmsg.getText();
-		int num1 = Integer.parseInt(actmsgval);
-        System.out.println("value is " +actmsgval);		
-				eltc_028_subscribeCourse.clicksubscribeCourses();
-		eltc_028_subscribeCourse.clickcourseName();
-		eltc_028_subscribeCourse.addCourse();
-		eltc_028_subscribeCourse.clickselectOption();
-		eltc_028_subscribeCourse.clickaddCourses();
-		WebElement expmsg=driver.findElement(By.xpath("//table//tbody//tr//td[@title='demo']//following-sibling::td[2]"));
-		String expmsgval = expmsg.getText();
-		int num2 = Integer.parseInt(expmsgval);
-        System.out.println("value is " +expmsgval);
-        Assert.assertTrue (num1 < num2);
+		eltc_028_subscribeCourse.clicksubscribeCourses();
+		eltc_028_subscribeCourse.selectkcourseName();
+		eltc_028_subscribeCourse.addCoursetowindow();
+		eltc_028_subscribeCourse.clickaddCoursetoclass();
+		
 		
 		
 	}

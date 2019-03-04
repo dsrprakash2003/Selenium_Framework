@@ -3,6 +3,7 @@ package com.training.pom;
 
 
 import org.apache.poi.util.SystemOutLogger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,9 @@ private WebElement deleteCourse;
 public void clickDeleteCourse() {
 	 this.deleteCourse.click();
 	 System.out.println("Clicked Delete Course");
+	 Alert deleteClass = driver.switchTo().alert();
+		deleteClass.accept();
+	 
 	// TODO Auto-generated method stub
 	
 }

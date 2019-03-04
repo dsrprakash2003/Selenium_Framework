@@ -65,15 +65,9 @@ public class ELTC_029 {
 		ELTC_026_Admin.sendPassword("admin@123");
 		ELTC_026_Admin.clickLoginBtn(); 
 		ELTC_026_Admin.clickadmintab();
-		String title;
-		Assert.assertEquals(title = "Administration", title);
-		//screenShot.captureScreenShot("First");
 		ELTC_026_Admin.classesLink();
 		eltc_029_deleteClass.clickDeleteCourse();
-		Alert deleteClass = driver.switchTo().alert();
-		deleteClass.accept();
-		
-		
+			
 		
 	}
 		

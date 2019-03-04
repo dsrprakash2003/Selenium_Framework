@@ -57,32 +57,21 @@ public class ELTC_027 {
 	
 	
 	@Test	
-	public void subscriberAdd() throws Throwable {
+	public void SubscribeUserToClass() throws Throwable {
 		ELTC_026_Admin.sendUserName("admin");
 		ELTC_026_Admin.sendPassword("admin@1234");
 		ELTC_026_Admin.clickLoginBtn(); 
 		ELTC_026_Admin.clickadmintab();
-		String title;
-		Assert.assertEquals(title = "Administration", title);
-		//screenShot.captureScreenShot("First");
 		ELTC_026_Admin.classesLink();
-		WebElement actmsg=driver.findElement(By.xpath("//table//tbody//tr//td[@title='demo']//following-sibling::td[1]"));
-		String  actmsgval = actmsg.getText();
-		int num1 = Integer.parseInt(actmsgval);
-        System.out.println("value is " +actmsgval);
 		eltc_027_subscribe.clicksubscribeUsers();
 		eltc_027_subscribe.clickusergrp();
 		eltc_027_subscribe.addusers();
 		eltc_027_subscribe.clicksubscribeuserstoclass();
-		WebElement expmsg=driver.findElement(By.xpath("//table//tbody//tr//td[@title='demo']//following-sibling::td[1]"));
-		String expmsgval = expmsg.getText();
-		int num2 = Integer.parseInt(expmsgval);
-        System.out.println("value is " +expmsgval);
-        Assert.assertTrue (num1 < num2);
-     }
+		eltc_027_subscribe.assertcheck();
 		
-        	
-	}    
+		
+	} 	
+}    
 	
 		
 	

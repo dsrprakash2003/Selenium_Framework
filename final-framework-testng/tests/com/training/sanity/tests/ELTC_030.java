@@ -71,12 +71,7 @@ public class ELTC_030 {
 		ELTC_026_Admin.clickLoginBtn(); 
 		eltc_030_logOutAdmin.ClickLogOutAdmin();
 		eltc_030_logOutAdmin.ClickLogOut();
-		WebElement msg=driver.findElement(By.id("formLogin_submitAuth"));
-		String text=msg.getText();
-		String expectedText = "Login";
-		Assert.assertEquals(text,expectedText);
-		
-		
+		eltc_030_logOutAdmin.assertcheck();	
 		
 	}
 		

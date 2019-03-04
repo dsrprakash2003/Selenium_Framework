@@ -3,10 +3,12 @@ package com.training.pom;
 
 
 import org.apache.poi.util.SystemOutLogger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 
 
@@ -38,6 +40,14 @@ public void ClickLogOut() {
 	 this.logOut.click();
 	 System.out.println("Clicked Logout button");
 	// TODO Auto-generated method stub
+}
+
+public void assertcheck() {	
+	WebElement msg=driver.findElement(By.id("formLogin_submitAuth"));
+	String text=msg.getText();
+	String expectedText = "Login";
+	Assert.assertEquals(text,expectedText);	 
+	 }
 
 }
-}
+

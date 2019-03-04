@@ -1,9 +1,11 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class ELTC_026_POM {
 	private WebDriver driver; 
@@ -12,6 +14,8 @@ public class ELTC_026_POM {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
+	
+	// Login elements identification in Elearning Application for Selenium Test
 	
 	@FindBy(id="login")
 	private WebElement userName; 
@@ -22,35 +26,45 @@ public class ELTC_026_POM {
 	@FindBy(id="formLogin_submitAuth")
 	private WebElement loginBtn; 
 	
-	@FindBy(xpath =" /html/body/div[1]/nav/div/div[2]/ul[1]/li[7]/a")
+	// Clicking Admin Tab
+	@FindBy(xpath ="//*[@id='menuone']/ul[1]/li[7]/a)")
 	private WebElement adminTab; 
 	
-	@FindBy(xpath =" /html/body/div[1]/section/div/div[2]/div/section/section/div[1]/div[1]/div/div[2]/div[2]/ul/li[7]/a")
+	// Clicking Classes Link in Admin Page
+	
+	@FindBy(xpath =" //*[@id='tabs-1']/div/div[2]/div[2]/ul/li[7]/a)")
 	private WebElement classesLink; 
 	
-	@FindBy(xpath =" /html/body/div[1]/section/div/div[2]/a[2]/img")
+	// Clicking Add Icon in the Classes Page
+	
+	@FindBy(xpath =" //*[@id='content-section']/div/div[2]/a[2]/img)")
 	private WebElement addClasses; 
 	
+	// Entering Class Name in Text Box
 	@FindBy(id ="usergroup_name")
 	private WebElement addClassName;
 	
+	// Entering Class Description in Description Box
 	@FindBy(id ="usergroup_description")
 	private WebElement addClassDesc;
 	
-	@FindBy(xpath ="/html/body/div[1]/section/div/form/fieldset/div[6]/div[1]/div/button")
+	// Click the Drop down for group Permission
+	@FindBy(xpath ="//*[@id='usergroup']/fieldset/div[6]/div[1]/div/button")
 	private WebElement grpPermissionDropDown;
 	
+	// Select Open option from drop down
 	@FindBy(xpath="//*[@id='usergroup']/fieldset/div[6]/div[1]/div/div/ul/li[1]/a/span[1]")
 	private WebElement grpPermission; 
 	
-	
-	
-	
+	// Click Submit button
 	@FindBy(name ="submit")
 	private WebElement addBtn;
 	
-	@FindBy(className="alert alert-success")
-	private WebElement alertmsg;
+	
+	
+	
+	// Methods
+	
 	
 	
 	public void sendUserName(String userName) {
@@ -99,14 +113,20 @@ public class ELTC_026_POM {
 		
 		public void grpPermission()  {
 			this.grpPermission.click();
-			
 			System.out.println("Drop Down selected with Open");
 }
-		public void clickaddBtn()  {
-			this.addBtn.click();
-					
+		public void clickaddBtn() throws InterruptedException  {
+					this.addBtn.click();
+				
 				
 			}
+		
+		public void assertCheck(){
+			WebElement msg=driver.findElement(By.xpath("//div[contains(@class,'alert alert-success')]"));
+			String text=msg.getText();
+			String expectedText = "Item added";
+			Assert.assertEquals(text,expectedText);
+		}
 		
 			
 			
