@@ -348,5 +348,46 @@ public void savbtn() {
 	this.savebtn.click();
 	}
 	
+public void topicicon(){
+	this.topicicon.click();
+}
+public void titlecoursedesc(String desc1) {
+	this.titlecoursedesc.sendKeys(desc1);
+}
+
+public void contentdesc(String desc2) {
+	this.contentdesc.sendKeys(desc2);
+	
+}
+public void savebtncourse1() {
+	this.savebtncourse.click();
+	
+}
+public void prjlink() {
+	this.prjlink.click();
+	
+}
+public void prjicon() {
+	this.prjicon.click();
+}
+public void newprjicon() {
+	this.newprjicon.click();
+}
+public void titleblog(String titleblog) {
+	this.titleblog.sendKeys(titleblog);
+}
+public void subtitle(String subtitleblog) {
+	this.subtitle.sendKeys(subtitleblog);
+}
+public void saveblog() {
+	this.saveblog.click();
+}
+public void prjlink1() {
+	this.prjlink1.click();
+	
+}
+public void newtaskicon() {
+	this.newtaskicon.click();
+}
 }
 	

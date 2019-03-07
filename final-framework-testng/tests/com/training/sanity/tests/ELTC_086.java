@@ -72,11 +72,11 @@ public class ELTC_086 {
 		ELTC_026_Admin.clickLoginBtn(); 
 		eltc_086.mycouresmenu();
 		eltc_086.createcourselink();
-		eltc_086.title("SeleniumPraksahTest192");
+		eltc_086.title("SeleniumPraksahTest292");
 		eltc_086.settingsbtn();
 		eltc_086.categorydropdown();
 		eltc_086.selectcategory();
-		eltc_086.coursecode("SVU");
+		eltc_086.coursecode("SYT");
 		eltc_086.languagedropdown();
 		eltc_086.selectlanguagedropdown();
 		eltc_086.createcoursebtn();
@@ -92,7 +92,16 @@ public class ELTC_086 {
 		eltc_086.sendAddFrameDescText1("test2");
 		eltc_086.FrameDesce2out1();
 		eltc_086.savebtncourse();		
-		
+		eltc_086.objicon();
+		eltc_086.objtitlebox("test");
+		eltc_086.objcontentbox("test");
+		eltc_086.savbtn();
+		eltc_086.topicicon();
+		eltc_086.titlecoursedesc("test1");
+		eltc_086.contentdesc("test2");
+		eltc_086.savebtncourse();
+		eltc_086.prjlink();
+		eltc_086.newprjicon();
 		
 }
 }
