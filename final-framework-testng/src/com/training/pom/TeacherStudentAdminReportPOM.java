@@ -112,11 +112,13 @@ private WebElement objicon;
 @FindBy(xpath =" //*[@id='course_description_title']")
 private WebElement objtitlebox;
 
+//Click in the objective content text box
+@FindBy(xpath ="//iframe[@title='Rich Text Editor, contentDescription']")
+private WebElement objcontentbox1;
 
-//Enter valid credentials in Content text box
-@FindBy(xpath ="/html/body/p")
-private WebElement objcontentbox;
-
+//Add objective content text box
+@FindBy(xpath ="//body[@contenteditable='true']")
+private WebElement addobjcontentbox1;
 
 //Click on Save button
 @FindBy(xpath =" //*[@id='course_description_submit']")
@@ -131,14 +133,18 @@ private WebElement topicicon;
 
 //Enter valid credentials in Title textbox
 @FindBy(xpath ="//*[@id='course_description_title']")
-private WebElement titlecoursedesc;
+private WebElement topictitle;
 
 
 
 
-//Enter valid credentials in Content text box
-@FindBy(xpath ="/html/body/p")
-private WebElement contentdesc;
+//Click in the Topicks content text box
+@FindBy(xpath ="//iframe[@title='Rich Text Editor, contentDescription']")
+private WebElement topiccontentbox;
+
+//Add text to Topic content text box
+@FindBy(xpath ="//body[@contenteditable='true']")
+private WebElement addtopiccontentbox;
 
 
 
@@ -148,12 +154,12 @@ private WebElement savebtncourse;
 
 
 //Click on projectlinktext
-@FindBy(xpath ="//*[@id='course_description_submit']")
+@FindBy(xpath ="//*[@id='page-breadcrumb']/ul/li[1]/a")
 private WebElement prjlink;
-//*[@id="page-breadcrumb"]/ul/li[1]/a
+
 
 //Click on Project icon
-@FindBy(xpath ="//*[@id='toolimage_7366']")
+@FindBy(xpath ="//img[@alt='Projects']")
 private WebElement prjicon;
 
 
@@ -176,12 +182,10 @@ private WebElement subtitle;
 private WebElement saveblog;
 
 
-
 //click on project link
-@FindBy(xpath =" //*[@id='project5c7fb3f86e3ec']/tbody/tr[2]/td[1]/a")
+@FindBy(xpath =" //a[contains(text(),'test123')]")
 private WebElement prjlink1;
 
-//*[@id="toolimage_7366"]
 
 //click on new task icon
 @FindBy(xpath ="//*[@id='toolbar']/div/div/a[2]/img")
@@ -191,6 +195,7 @@ private WebElement newtaskicon;
 @FindBy(xpath ="//*[@id='add_post_title']")
 private WebElement titlepost;
 
+
 //click on save button
 
 @FindBy(xpath ="//*[@id='add_post_save']")
@@ -198,11 +203,11 @@ private WebElement savetitle;
 
 //click on Role management icon
 @FindBy(xpath ="//*[@id='toolbar']/div/div/a[3]/img")
-private WebElement credentialtxtbox;
+private WebElement rolemanagementicon;
 
 //click on add a new role icon
 @FindBy(xpath =" //*[@id='main_content']/div/div/div/div/a[1]")
-private WebElement newroleicon;
+private WebElement addnewroleicon;
 
 //enter valid credential in title text box
 @FindBy(xpath =" //*[@id='main_content']/div/div/div/form/div[1]/div/input")
@@ -218,13 +223,20 @@ private WebElement assignrole;
 
 
 //select student / teacher name in user list box
-@FindBy(xpath =" //*[@id='assign_task']/fieldset/div[1]/div[1]/div/button']")
+@FindBy(xpath =" //*[@id='assign_task']/fieldset/div[1]/div[1]/div")
 private WebElement studentteacher;
 
 
 //select student / teacher name in user list box
 @FindBy(xpath =" //*[@id='assign_task']/fieldset/div[1]/div[1]/div/div/ul/li/a")
 private WebElement studentteacherselect;
+
+//Click Validate button
+@FindBy(xpath =" //*[@id='assign_task_submit']")
+private WebElement validatebutton;
+
+
+
 
 
 
@@ -292,22 +304,7 @@ public void addintroicon() {
 		driver.switchTo().defaultContent();
 	} 
 
-	public void FrameDesc1() {
-		
-		driver.switchTo().frame(contenttextbox);
-	}
-	
-	public void sendAddFrameDescText1(String AddFrameDescText1) {
-		this.addcontenttextbox.clear();
-		this.addcontenttextbox.sendKeys(AddFrameDescText1);
-	}
-	
-	
-	public void FrameDesce2out1() {
-	
-		driver.switchTo().defaultContent();
-	} 
-public void saveintrotext() {
+	public void saveintrotext() {
 	this.saveintrotext.click();
 }
 
@@ -323,10 +320,22 @@ public void titletextbox(String tit) {
 	this.titletextbox.sendKeys(tit);
 	
 }
-
-public void contenttextbox(String content) {
-	this.contenttextbox.sendKeys(content);
+public void FrameDesc1() {
+	
+	driver.switchTo().frame(contenttextbox);
 }
+
+public void sendAddFrameDescText1(String AddFrameDescText1) {
+	this.addcontenttextbox.clear();
+	this.addcontenttextbox.sendKeys(AddFrameDescText1);
+}
+
+
+public void FrameDesce2out1() {
+
+	driver.switchTo().defaultContent();
+} 
+
 
 public void savebtncourse() {
 	this.savebtncourse.click();
@@ -336,33 +345,61 @@ public void objicon() {
 	this.objicon.click();
 }
 
-public void objtitlebox(String obj) {
-	this.objtitlebox.sendKeys(obj);
+public void objtitlebox(String objtitle) {
+	this.objtitlebox.sendKeys(objtitle);
 }
+
+public void FrameDesc2() {
 	
-public void objcontentbox(String content1){	
- this.objcontentbox.sendKeys(content1);
+	driver.switchTo().frame(objcontentbox1);
 }
+
+public void sendAddFrameDescText11(String AddFrameDescText2) {
+	this.addobjcontentbox1.clear();
+	this.addobjcontentbox1.sendKeys(AddFrameDescText2);
+}
+
+
+public void FrameDesce2out11() {
+
+	driver.switchTo().defaultContent();
+} 
 	
 public void savbtn() {
 	this.savebtn.click();
 	}
-	
+
+
 public void topicicon(){
 	this.topicicon.click();
 }
 public void titlecoursedesc(String desc1) {
-	this.titlecoursedesc.sendKeys(desc1);
+	this.topictitle.sendKeys(desc1);
 }
 
-public void contentdesc(String desc2) {
-	this.contentdesc.sendKeys(desc2);
+public void FrameDesc3() {
 	
+	driver.switchTo().frame(topiccontentbox);
 }
+
+public void sendAddFrameDescText12(String AddFrameDescText3) {
+	this.addtopiccontentbox.clear();
+	this.addtopiccontentbox.sendKeys(AddFrameDescText3);
+}
+
+
+public void FrameDesce2out12() {
+
+	driver.switchTo().defaultContent();
+} 
+
+
 public void savebtncourse1() {
 	this.savebtncourse.click();
 	
 }
+
+
 public void prjlink() {
 	this.prjlink.click();
 	
@@ -382,12 +419,49 @@ public void subtitle(String subtitleblog) {
 public void saveblog() {
 	this.saveblog.click();
 }
+
+
 public void prjlink1() {
 	this.prjlink1.click();
 	
 }
+
+
 public void newtaskicon() {
 	this.newtaskicon.click();
+}
+
+public void titlepost(String post) {
+	this.titlepost.sendKeys(post);
+}
+
+public void savetitle() {
+	this.savetitle.click();
+}
+public void rolemanagementicon() {
+	this.rolemanagementicon.click();
+}
+public void addnewroleicon() {
+	this.addnewroleicon.click();
+}
+public void titlerole(String role) {
+	this.titlerole.click();
+}
+public void saverole() {
+	this.saverole.click();
+}
+public void assignrole() {
+	this.assignrole.click();
+	
+}
+public void studentteacher() {
+	this.studentteacher.click();
+}
+public void studentteacherselect() {
+	this.studentteacherselect.click();
+}
+public void clickvalidatebtn() {
+	this.validatebutton.click();
 }
 }
 	

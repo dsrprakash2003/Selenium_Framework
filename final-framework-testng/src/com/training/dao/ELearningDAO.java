@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Properties;
 
 import com.training.bean.LoginBean;
+import com.training.bean.SignUpBean;
 import com.training.connection.GetConnection;
 import com.training.utility.LoadDBDetails;
 
-// Data Access Object 
 public class ELearningDAO {
 	
 	Properties properties; 
@@ -27,36 +27,50 @@ public class ELearningDAO {
 		}
 	}
 	
-	public List<LoginBean> getLogins(){
+	
+	
+	
+	public List<SignUpBean> geLogins(){
 		String sql = properties.getProperty("get.logins"); 
 		
 		GetConnection gc  = new GetConnection(); 
-		List<LoginBean> list = null;
+		List<SignUpBean> lists = null;
 		try {
 			gc.ps1 = GetConnection.getMySqlConnection(LoadDBDetails.getDBDetails()).prepareStatement(sql); 
-			list = new ArrayList<LoginBean>(); 
+			lists = new ArrayList<SignUpBean>(); 
 			
 			gc.rs1 = gc.ps1.executeQuery(); 
 			
 			while(gc.rs1.next()) {
 			
-				LoginBean temp = new LoginBean(); 
-				temp.setUserName(gc.rs1.getString(1));
-				temp.setPassword(gc.rs1.getString(2));
+				SignUpBean temp = new SignUpBean(); 
+				temp.setFirstName(gc.rs1.getString(1));
+				temp.setLastName(gc.rs1.getString(2));
+				temp.setEmail(gc.rs1.getString(3));
+				temp.setUserName(gc.rs1.getString(4));
+				temp.setPwd(gc.rs1.getString(5));
+				temp.setCPwd(gc.rs1.getString(6));
+				temp.setPhone(gc.rs1.getString(7));
+				temp.setLang(gc.rs1.getString(8));
 
-				list.add(temp); 
+				lists.add(temp); 
 				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return list; 
+		return lists; 
 	}
 	
+	
 	public static void main(String[] args) {
-		new ELearningDAO().getLogins().forEach(System.out :: println);
+		new ELearningDAO().geLogins().forEach(System.out :: println);
 	}
+
+
+
+	
 	
 	
 }

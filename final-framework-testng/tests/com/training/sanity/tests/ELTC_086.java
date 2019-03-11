@@ -1,3 +1,7 @@
+/**To verify whether application allows teacher to create course with project, student to comment on the task & admin
+ *  to generate the report
+ */
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -20,6 +24,8 @@ import com.training.pom.SubscribeUsersPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 import com.training.pom.TeacherStudentAdminReportPOM;
+
+
 
 public class ELTC_086 {
 	private WebDriver driver;
@@ -72,11 +78,11 @@ public class ELTC_086 {
 		ELTC_026_Admin.clickLoginBtn(); 
 		eltc_086.mycouresmenu();
 		eltc_086.createcourselink();
-		eltc_086.title("SeleniumPraksahTest292");
+		eltc_086.title("SeleniumPraksahTest454");
 		eltc_086.settingsbtn();
 		eltc_086.categorydropdown();
 		eltc_086.selectcategory();
-		eltc_086.coursecode("SYT");
+		eltc_086.coursecode("LUK");
 		eltc_086.languagedropdown();
 		eltc_086.selectlanguagedropdown();
 		eltc_086.createcoursebtn();
@@ -94,14 +100,33 @@ public class ELTC_086 {
 		eltc_086.savebtncourse();		
 		eltc_086.objicon();
 		eltc_086.objtitlebox("test");
-		eltc_086.objcontentbox("test");
+		eltc_086.FrameDesc2();
+		eltc_086.sendAddFrameDescText11("testtest");
+		eltc_086.FrameDesce2out11();
 		eltc_086.savbtn();
 		eltc_086.topicicon();
 		eltc_086.titlecoursedesc("test1");
-		eltc_086.contentdesc("test2");
+		eltc_086.FrameDesc3();
+		eltc_086.sendAddFrameDescText12("testtesttest");
+		eltc_086.FrameDesce2out12();
 		eltc_086.savebtncourse();
 		eltc_086.prjlink();
+		eltc_086.prjicon();
 		eltc_086.newprjicon();
-		
+		eltc_086.titleblog("test123");
+		eltc_086.subtitle("test123");
+		eltc_086.saveblog();
+		eltc_086.prjlink1();
+		eltc_086.newtaskicon();
+		eltc_086.titlepost("Software Engineer");
+		eltc_086.savetitle();
+		eltc_086.rolemanagementicon();
+		eltc_086.addnewroleicon();
+		eltc_086.titlerole("test");
+		eltc_086.saverole();
+		eltc_086.assignrole();
+		eltc_086.studentteacher();
+		eltc_086.studentteacherselect();
+		eltc_086.clickvalidatebtn();
 }
 }

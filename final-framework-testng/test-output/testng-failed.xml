@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.ELTC_086">
+      <class name="com.training.sanity.tests.ELTC_090">
         <methods>
-          <include name="setUp"/>
           <include name="setUpBeforeClass"/>
-          <include name="CourseAddedtoSession"/>
+          <include name="Validtests"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.ELTC_086 -->
+      </class> <!-- com.training.sanity.tests.ELTC_090 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
